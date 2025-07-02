@@ -1,5 +1,15 @@
 from flask import Flask, render_template
+from pymongo import MongoClient
+
 app = Flask(__name__)
+client = MongoClient('localhost', 27017)
+db = client.blind_timer
+
+# db.users.insert_one({
+#     "name": "tester",
+#     "email": "test@test.com",
+#     "password": "test123"
+# })
 
 
 @app.route('/')
