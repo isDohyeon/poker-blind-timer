@@ -3,6 +3,7 @@
 }
 
 .container.login-form {
+  width: 400px;
   max-width: 400px;
   margin-top: 60px;
 }
