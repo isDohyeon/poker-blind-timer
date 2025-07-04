@@ -2,8 +2,6 @@ $(document).ready(function () {
   $("#signup-form").submit(function (event) {
     event.preventDefault();
 
-    // var formData = $(this).serialize();
-
     var formData = {
       name: $('input[name="name"]').val(),
       email: $('input[name="email"]').val(),

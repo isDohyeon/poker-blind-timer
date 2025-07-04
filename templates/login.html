@@ -5,40 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="{{ url_for('static', filename='login.js') }}"></script>
     <script src="https://kit.fontawesome.com/3ea215d505.js" crossorigin="anonymous"></script>
-    <title>Document</title>
+    <title>로그인 | Blind Timer</title>
   </head>
   <body>
     <div class="content has-text-centered">
       <h1>Blind Timer</h1>
     </div>
     <div class="container login-form">
-      <div class="block">
-        <div class="field">
-          <p class="control has-icons-left has-icons-right">
-            <input class="input" type="email" placeholder="Email" />
-            <span class="icon is-small is-left">
-              <i class="fas fa-envelope"></i>
-            </span>
-            <span class="icon is-small is-right">
-              <i class="fas fa-check"></i>
-            </span>
-          </p>
+      <form id="login-form">
+        <div class="block">
+          <div class="field">
+            <p class="control has-icons-left has-icons-right">
+              <input class="input" name="login-email" type="email" placeholder="Email" required />
+              <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+              </span>
+            </p>
+          </div>
+          <div class="field">
+            <p class="control has-icons-left">
+              <input class="input" name="login-password" type="password" placeholder="Password" required />
+              <span class="icon is-small is-left">
+                <i class="fas fa-lock"></i>
+              </span>
+            </p>
+          </div>
+          <div class="field has-text-centered">
+            <p class="control">
+              <button class="button is-success is-fullwidth" type="submit">Login</button>
+            </p>
+          </div>
         </div>
-        <div class="field">
-          <p class="control has-icons-left">
-            <input class="input" type="password" placeholder="Password" />
-            <span class="icon is-small is-left">
-              <i class="fas fa-lock"></i>
-            </span>
-          </p>
-        </div>
-        <div class="field has-text-centered">
-          <p class="control">
-            <button class="button is-success is-fullwidth">Login</button>
-          </p>
-        </div>
-      </div>
+      </form>
       <div class="signup-link has-text-centered" style="margin-top: 1.5rem">
         <span>아직 회원이 아니신가요? </span>
         <a href="/signup" class="has-text-link has-text-weight-bold">회원가입</a>
