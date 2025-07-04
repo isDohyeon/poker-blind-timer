@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $("#login-form").submit(function (event) {
+  $('#login-form').submit(function (event) {
     event.preventDefault();
 
     var loginData = {
@@ -8,16 +8,16 @@ $(document).ready(function () {
     };
 
     $.ajax({
-      url: "/api/users/login",
-      type: "POST",
+      url: '/api/users/login',
+      type: 'POST',
       data: loginData,
       success: function (response) {
-        console.log(response);
-        alert("로그인 성공");
-        window.location.href = "/";
+        alert('로그인 성공');
+        alert(response.name);
+        window.location.href = '/main';
       },
       error: function () {
-        alert("오류 발생");
+        alert('오류 발생');
       },
     });
   });

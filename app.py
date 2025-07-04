@@ -19,6 +19,9 @@ def home():
 def signup():
     return render_template('signup.html')
 
+@app.route('/main')
+def main():
+    return render_template('main.html')
 
 @app.route('/api/users/login', methods=['POST'])
 def login_api():
@@ -46,6 +49,7 @@ def login_api():
 
     return jsonify({
         "success": True,
+        "name": user["name"],
         "message": "Success: Login complete!"
     }), 200
 
